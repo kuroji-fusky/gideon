@@ -1,0 +1,16 @@
+# a fix for https://github.com/air-verse/air/issues/802 for those who have "Even Better TOML" extension enabled
+#:schema https://json.schemastore.org/any.json
+root = "."
+tmp_dir = "tmp"
+
+[build]
+exclude = ["tmp", "vendor"]
+
+[color]
+main = "yellow"
+watcher = "cyan"
+build = "green"
+log = "white"
+
+[screen]
+clear_on_rebuild = true

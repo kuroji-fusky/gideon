@@ -1,0 +1,9 @@
+allowed_domains:
+  - "*.wikipedia.org"
+  - "*.fandom.com"
+  - "*.miraheze.org"
+
+blacklisted_domains:
+  # Only top-level domains are blocked. However, any subdomains are allowed through from the `allowed_domains` block above.
+  - "fandom.com"
+  - "miraheze.org"
