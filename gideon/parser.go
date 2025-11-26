@@ -6,7 +6,8 @@ import (
 )
 
 type CookieMuncher struct {
-	Session *string `json:"fandom_session"`
+	FandomSession *string
+	FandomCSRF    *string
 }
 
 type InitConfig struct {
@@ -98,6 +99,11 @@ func (f *wikiPageRequest) RequestCategory(pagename string) (*PageResponse[[]Cate
 
 // Returns a page with a "Special:" prefix
 func (f *wikiPageRequest) RequestSpecial(pagename string) (*PageResponse[[]any], error) {
+	return &PageResponse[[]any]{}, nil
+}
+
+// Returns a page with a "Template:" prefix
+func (f *wikiPageRequest) RequestTemplate(pagename string) (*PageResponse[[]any], error) {
 	return &PageResponse[[]any]{}, nil
 }
 
