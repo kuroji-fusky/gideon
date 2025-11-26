@@ -69,14 +69,14 @@ func main() {
 	// Parse domains.yml
 	cfgBuffer, cfgFileErr := os.ReadFile(filepath.Join(cwd, "domains.yml"))
 	if cfgFileErr != nil {
-		log.Panicf("There was an oopsie reading domains.yml", cfgFileErr)
+		log.Panicf("There was an oopsie reading domains.yml: %v", cfgFileErr)
 	}
 
 	var loadedDomainCfg DomainConfig
 
 	domainCfgLoadErr := yaml.Unmarshal(cfgBuffer, loadedDomainCfg)
 	if domainCfgLoadErr != nil {
-		log.Panicf("Cannot load domain config", domainCfgLoadErr)
+		log.Panicf("Cannot load domain config: %v", domainCfgLoadErr)
 	}
 
 	// Load dem routes
