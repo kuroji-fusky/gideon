@@ -6,7 +6,10 @@ require (
 	github.com/goccy/go-yaml v1.18.0
 	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.13.4
+	kuroji-fusky/gideon v0.1.0
 )
+
+replace kuroji-fusky/gideon => ../gideon
 
 require (
 	github.com/labstack/gommon v0.4.2 // indirect

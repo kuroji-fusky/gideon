@@ -1,4 +1,4 @@
-package parser
+package gideon
 
 type PageResponse[T any] struct {
 	Url        string
