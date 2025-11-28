@@ -93,12 +93,12 @@ func (f *wikiPageRequest) GetArticle(pagename string) (*ArticleResponse, error) 
 }
 
 // Returns a page with a "Category:" prefix
-func (f *wikiPageRequest) RequestCategory(pagename string) (*PageResponse[[]CategoryList], error) {
+func (f *wikiPageRequest) RequestCategoryPage(pagename string) (*PageResponse[[]CategoryList], error) {
 	return &PageResponse[[]CategoryList]{}, nil
 }
 
 // Returns a page with a "Special:" prefix
-func (f *wikiPageRequest) RequestSpecial(pagename string) (*PageResponse[[]any], error) {
+func (f *wikiPageRequest) RequestSpecialPage(pagename string) (*PageResponse[[]any], error) {
 	return &PageResponse[[]any]{}, nil
 }
 
@@ -109,7 +109,7 @@ func (f *wikiPageRequest) RequestTemplate(pagename string) (*PageResponse[[]any]
 
 // A wrapper for "Special:AllPages"
 func (f *wikiPageRequest) GetAllPages() (*PageResponse[[]any], error) {
-	return f.RequestSpecial("AllPages")
+	return f.RequestSpecialPage("AllPages")
 }
 
 // From ArticleResponse constructor
@@ -122,10 +122,14 @@ type HistoryStore struct {
 	Tags         []string
 }
 
-func (f *PageResponse[any]) History() ([]HistoryStore, error) {}
+func (f *PageResponse[any]) History() ([]HistoryStore, error) {
+	return []HistoryStore{}, nil
+}
 
 // Retrieves all the categories from a given article page
-func (f *PageResponse[any]) GetCategoryPages() ([]string, error) {}
+func (f *PageResponse[any]) GetCategoryPages() ([]string, error) {
+	return []string{}, nil
+}
 
 type CommentStoreResponse struct {
 	Id           string   `json:"comment_id"`
@@ -135,4 +139,6 @@ type CommentStoreResponse struct {
 	Contents     []string `json:"contents"`
 }
 
-func (f *PageResponse[any]) GetComments() ([]CommentStoreResponse, error) {}
+func (f *PageResponse[any]) GetComments() ([]CommentStoreResponse, error) {
+	return []CommentStoreResponse{}, nil
+}

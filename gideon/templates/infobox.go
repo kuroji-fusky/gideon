@@ -1,4 +1,4 @@
-package gideon
+package templates
 
 type InfoboxType string
 
@@ -41,7 +41,9 @@ func (f *PageResponse[any]) InfoboxConfig(cfg InfoboxWithConfig) (*InfoboxStruct
 // it won't account for any edge cases where an infobox has custom formatting on
 // its XML template. For granular control on how infobox content is handled,
 // use `Infobox.Parse()` instead.
-func (f *InfoboxStructure) Basic() InfoboxStructure {}
+func (f *InfoboxStructure) Basic() InfoboxStructure {
+	return InfoboxStructure{}
+}
 
 func (f *InfoboxStructure) Parse(callback func(section []InfoboxSection)) (InfoboxStructure, error) {
 	return InfoboxStructure{}, nil
