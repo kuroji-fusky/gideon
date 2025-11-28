@@ -1,8 +1,10 @@
 {
+  "private": true,
   "name": "gideon-client",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -14,5 +16,9 @@
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.16.0",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "only-allow": "^1.2.2"
   }
 }
