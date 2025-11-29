@@ -11,14 +11,14 @@ type CookieMuncher struct {
 }
 
 type InitConfig struct {
-	Headers map[string]interface{}
+	Headers map[string]any
 	Cookies CookieMuncher
 }
 
 type wikiPageRequest struct {
 	PartialWikiUrl    string
 	CSSArticleContent string
-	Headers           *map[string]interface{}
+	Headers           *map[string]any
 	Cookies           *CookieMuncher
 }
 
